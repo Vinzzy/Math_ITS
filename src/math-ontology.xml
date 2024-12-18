@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:ex="http://www.example.com/math-its#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://www.example.com/math-its#adaptiveHint">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Hint"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#User"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#DivisionExample1">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Example"/>
+    <ex:problemStatement>What is 16 / 4?</ex:problemStatement>
+    <ex:correctAnswer rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.0</ex:correctAnswer>
+    <ex:requiresOperation rdf:resource="http://www.example.com/math-its#Division"/>
+    <ex:hasDifficulty rdf:resource="http://www.example.com/math-its#Easy"/>
+    <ex:progressForProblem rdf:resource="http://www.example.com/math-its#AdditionExampleProgress"/>
+    <ex:timeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</ex:timeLimit>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#progressForUser">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#UserProgress"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#User"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#problemStatement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Problem"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#receivesFeedback">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#User"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#Feedback"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="en">Mathematical Intelligent Tutoring System Ontology</rdfs:label>
+    <rdfs:comment xml:lang="en">This ontology defines the structure of a system to represent mathematical problems, users, feedback, and progress tracking.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#attemptsCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#UserProgress"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#hintText">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Hint"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#AdditionExample">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Problem"/>
+    <ex:problemStatement>What is 5 + 3?</ex:problemStatement>
+    <ex:correctAnswer rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.0</ex:correctAnswer>
+    <ex:requiresOperation rdf:resource="http://www.example.com/math-its#Addition"/>
+    <ex:hasDifficulty rdf:resource="http://www.example.com/math-its#Easy"/>
+    <ex:progressForProblem rdf:resource="http://www.example.com/math-its#AdditionExampleProgress"/>
+    <ex:timeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</ex:timeLimit>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#hasDifficulty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Problem"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#Difficulty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Problem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/math-its#Task"/>
+    <rdfs:comment xml:lang="en">A problem or question to be solved by the user in the intelligent tutoring system.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Positive">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/math-its#FeedbackType"/>
+    <rdf:type rdf:resource="http://www.example.com/math-its#FeedbackType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#MathematicalOperation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Feedback6">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Feedback"/>
+    <rdfs:label>Hint: Division is the opposite of multiplication. Try finding a multiplication fact.</rdfs:label>
+    <ex:feedbackForStep rdf:resource="http://www.example.com/math-its#DivisionExample1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Step">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#feedbackForAttempt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Feedback"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#Attempt"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#correctCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#UserProgress"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#feedbackForStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Feedback"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#Step"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Easy">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Difficulty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Medium">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Difficulty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#recommendedNextProblem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Problem"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#Problem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#feedbackText">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Feedback"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Step1">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Step"/>
+    <ex:stepNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ex:stepNumber>
+    <ex:nextStep rdf:resource="http://www.example.com/math-its#Step2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#correctAnswer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Problem"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#timeLimit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Problem"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#FeedbackType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/math-its#Concept"/>
+    <rdfs:comment xml:lang="en">Class to represent the type of feedback given to a user (Positive, Negative, or Neutral).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#hasReceivedFeedback">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#User"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#Feedback"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Feedback3">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Feedback"/>
+    <rdfs:label>Hint: Add the tens first, then add the units.</rdfs:label>
+    <ex:feedbackForStep rdf:resource="http://www.example.com/math-its#AdditionExample2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#FeedbackExample">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Feedback"/>
+    <ex:feedbackText>Great job! Your answer is correct.</ex:feedbackText>
+    <ex:timeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-12-01T12:00:00</ex:timeStamp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Module">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#MultiplicationExample1">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Example"/>
+    <ex:problemStatement>What is 6 x 4?</ex:problemStatement>
+    <ex:correctAnswer rdf:datatype="http://www.w3.org/2001/XMLSchema#double">24.0</ex:correctAnswer>
+    <ex:requiresOperation rdf:resource="http://www.example.com/math-its#Multiplication"/>
+    <ex:hasDifficulty rdf:resource="http://www.example.com/math-its#Easy"/>
+    <ex:progressForProblem rdf:resource="http://www.example.com/math-its#AdditionExampleProgress"/>
+    <ex:timeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</ex:timeLimit>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#belongsToModule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Problem"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#Module"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#hasProblem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#User"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#Problem"/>
+    <owl:inverseOf rdf:resource="http://www.example.com/math-its#isProblemOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#AdditionExample2">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Problem"/>
+    <ex:problemStatement>What is 15 + 7?</ex:problemStatement>
+    <ex:correctAnswer rdf:datatype="http://www.w3.org/2001/XMLSchema#double">22.0</ex:correctAnswer>
+    <ex:requiresOperation rdf:resource="http://www.example.com/math-its#Addition"/>
+    <ex:hasDifficulty rdf:resource="http://www.example.com/math-its#Easy"/>
+    <ex:progressForProblem rdf:resource="http://www.example.com/math-its#AdditionExampleProgress"/>
+    <ex:timeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</ex:timeLimit>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#hasStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Problem"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#Step"/>
+    <owl:inverseOf rdf:resource="http://www.example.com/math-its#isStepOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#nextStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Step"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#Step"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Task">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Category">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Neutral">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/math-its#FeedbackType"/>
+    <rdf:type rdf:resource="http://www.example.com/math-its#FeedbackType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#timeStamp">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Feedback"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#HintExample">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Hint"/>
+    <ex:hintText>Try adding the numbers one at a time.</ex:hintText>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#progressForProblem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#UserProgress"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#Problem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Hint">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/math-its#Task"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Negative">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/math-its#FeedbackType"/>
+    <rdf:type rdf:resource="http://www.example.com/math-its#FeedbackType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#userAnswer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#User"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#SubtractionExample2">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Example"/>
+    <ex:problemStatement>What is 20 - 8?</ex:problemStatement>
+    <ex:correctAnswer rdf:datatype="http://www.w3.org/2001/XMLSchema#double">12.0</ex:correctAnswer>
+    <ex:requiresOperation rdf:resource="http://www.example.com/math-its#Subtraction"/>
+    <ex:hasDifficulty rdf:resource="http://www.example.com/math-its#Easy"/>
+    <ex:progressForProblem rdf:resource="http://www.example.com/math-its#AdditionExampleProgress"/>
+    <ex:timeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</ex:timeLimit>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Feedback4">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Feedback"/>
+    <rdfs:label>Hint: Subtract step-by-step, starting with the largest place value.</rdfs:label>
+    <ex:feedbackForStep rdf:resource="http://www.example.com/math-its#SubtractionExample2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Hard">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Difficulty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#masteryLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#UserProgress"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#hasCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Problem"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#Category"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#UserProgress">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/math-its#Progress"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Feedback5">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Feedback"/>
+    <rdfs:label>Hint: Use multiplication tables if you get stuck.</rdfs:label>
+    <ex:feedbackForStep rdf:resource="http://www.example.com/math-its#MultiplicationExample1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Feedback">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#hasProgress">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#User"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#UserProgress"/>
+    <owl:inverseOf rdf:resource="http://www.example.com/math-its#isProgressOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Subtraction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/math-its#MathematicalOperation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Division">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/math-its#MathematicalOperation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#requiresOperation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Problem"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#MathematicalOperation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Difficulty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/math-its#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#stepNumber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Step"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#hasHint">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#Problem"/>
+    <rdfs:range rdf:resource="http://www.example.com/math-its#Hint"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#incorrectCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.com/math-its#UserProgress"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Attempt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#User">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Step2">
+    <rdf:type rdf:resource="http://www.example.com/math-its#Step"/>
+    <ex:stepNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ex:stepNumber>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Addition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/math-its#MathematicalOperation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Multiplication">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/math-its#MathematicalOperation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Progress">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Concept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.com/math-its#Example">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>
