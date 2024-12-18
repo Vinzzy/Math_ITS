@@ -1,0 +1,22 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Math_ITS
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Vineeta Pandey
+    email: vinzzypandey@gmail.com
+repository-code: 'https://github.com/Vinzzy/Math_ITS.git'
+url: 'https://github.com/Vinzzy/Math_ITS'
+abstract: >-
+  An Intelligent Tutoring System (ITS) for Math that allows
+  users to solve basic arithmetic operations, with
+  underlying connections powered by an ontology-driven
+  approach.
+keywords:
+  - ITS
+date-released: '2024-12-18'
